@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>Learnify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Lobster&family=Playwrite+HR+Lijeva:wght@100..400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Lobster&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+HR+Lijeva:wght@100..400&display=swap" rel="stylesheet">
+<style>
+  body {
+    background-color: #000000;
+    font-family: 'Afacad', sans-serif;
+    color: white;
+     display: flex; 
+     justify-content: center; 
+     align-items: center;
+      height: 100vh;
+       margin: 0;
+}
+h1 {
+    font-family: 'Afacad';
+    color: white;
+}
+.login-container { 
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    
+
+}
+
+ .input-container {
+         margin-bottom: 20px;
+
+     }
+
+     .input-container input { 
+        background-color: #242728;
+         border: 1px solid transparent; 
+         padding: 7px 5px; 
+         color: white; 
+         font-size: 17px; 
+         font-family: 'Open Sans', sans-serif; 
+         border-radius: 4px;
+         width: 97.5%;
+         
+        }
+        #containertwo {
+            margin-top: -7px;
+        }
+        #containerthree {
+            margin-top: -7px;
+        }
+        .input-container input::placeholder { 
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+         }
+         h2 {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 3px;
+         }
+         .or-container
+          { display: flex;
+             align-items: center; 
+             text-align: center;
+              margin: 20px 0; 
+            } 
+              .or-container::before, .or-container::after {
+                 content: '';
+                  flex: 1;
+                   border-bottom: 1px solid grey;
+                 } 
+                 .or-container:not(:empty)::before { 
+                    margin-right: .5em;
+                 } 
+                 .or-container:not(:empty)::after {
+                     margin-left: .5em;
+                     } 
+                     .or-text {
+                         color: grey;
+                          font-size: 19px;
+                           font-family: 'Afacad', sans-serif;
+                         }
+
+     .button-container {
+         margin-top: 20px;
+         } 
+    .sign-in-button { 
+        background-color: #ff9500;
+ border: none; 
+ padding: 10px 20px; 
+ color: #000000; 
+ font-size: 14px; 
+ cursor: pointer; 
+ font-family: 'Open sans', sans-serif; 
+ width: 100%;
+ border-radius: 10px;
+ font-weight: 600;
+ } 
+ 
+ .sign-in-button:hover {
+     background-color: #e68300; 
+    }
+    .p-container {
+        max-width: 200px;
+        margin: auto;
+    }
+p {
+    color: #776e62;
+    
+}
+a {
+    color: #ff9500;
+}
+
+.image {
+    width: 48%;
+    height: 48%;
+}
+.google-button { 
+  background-color: #000000;
+   color: #ff9500; 
+  border: 2px solid #ff9500; 
+  padding: 10px 20px; 
+  font-size: 14px; 
+  cursor: pointer; 
+  display: flex; 
+  border-radius: 4px;
+  margin-left: auto;
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  
+ } 
+.google-icon {
+  width: 20px;
+   height: 20px;
+    margin-right: 10px;
+}
+
+</style>
+
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo-con">
+        <img src="IMG/Frame.png" class="image">
+      </div>
+<h2>Register to your account</h2>
+<div class="btn-class"><button class="google-button"> <img src="IMG/search.png" title="google icons" class="google-icon">Register with google </button></div>
+<div class="or-container"> <span class="or-text">or</span> </div>
+    <div class="input-container"> 
+      <input type="username" placeholder="Your Name"> 
+    </div>
+    <div class="input-container"> 
+      <input type="email" placeholder="Email"> 
+    </div>
+       <div class="input-container" id="containertwo">
+         <input type="password" placeholder="Password"> 
+        </div>
+        <div class="input-container" id="containerthree">
+            <input type="password" placeholder="Confirm password"> 
+           </div>
+        <div class="button-container"> 
+          <button class="sign-in-button">Register</button> 
+        </div>
+        <div class="p-container">
+          <p>Have an account? <a href="index.html">Sign In</a></p>
+        </div>
+</div>
+ 
+    
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+  
+    const firebaseConfig = {
+  apiKey: "AIzaSyAeXMcfydaBf2vL_6Vncb4PqnXN2vxP240",
+  authDomain: "learnify-group3.firebaseapp.com",
+  projectId: "learnify-group3",
+  storageBucket: "learnify-group3.firebasestorage.app",
+  messagingSenderId: "1064023742653",
+  appId: "1:1064023742653:web:90365771756ac8b1e47fd4",
+};
+  
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  
+ 
+    const registerButton = document.querySelector(".sign-in-button");
+    registerButton.addEventListener("click", async () => {
+      const name = document.querySelector("input[placeholder='Your Name']").value;
+      const email = document.querySelector("input[placeholder='Email']").value;
+      const password = document.querySelector("input[placeholder='Password']").value;
+      const confirmPassword = document.querySelector("input[placeholder='Confirm password']").value;
+  
+      localStorage.setItem("userName", name);
+  
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+  
+      try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    window.location.href = 'index.html'; 
+  } catch (error) {
+    console.error("Error registering user:", error.message);
+    alert(error.message);
+  }
+});
+   
+const googleButton = document.querySelector(".google-button");
+googleButton.addEventListener("click", async () => {
+  const provider = new GoogleAuthProvider();
+
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    console.log("Full user object:", user);
+
+    console.log("User's Google displayName:", user.displayName);
+
+    window.location.href = 'screen1.html';
+  } catch (error) {
+    console.error("Error with Google registration:", error.message);
+    alert(error.message);
+  }
+});
+  </script>
+  
+  </body>
+</html>
